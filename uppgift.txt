@@ -1,0 +1,52 @@
+Collatz-sekvenser
+=================
+
+För varje postivt tal kan man räkna ut en sekvens av tal som slutar på 1. För
+att få nästa tal i sekvensen använder man denna formel:
+
+    om n är jämnt: n/2
+    om n är udda:  n*3 + 1
+
+Om man börjar på 3 får man t.ex. denna sekvens (med 7 steg):
+
+    3 -> 10 -> 5 -> 16 -> 8 -> 4 -> 2 -> 1
+
+I programmet collatz.c finns funktionen collatz_length(n) som beräknar längden
+på en sekvens givet starttalet.
+
+
+
+Komma igång
+===========
+
+Kompilera och starta GDB:
+
+    gcc -O0 -g collatz.c -o collatz && gdb --tui collatz
+
+
+
+Uppgifter
+=========
+
+Försök hitta svaret på följade frågor med hjälp av GDB utan att ändra programmet.
+
+1. Vad blir 'result' då 'n' är 12?      Svar: 
+
+2. Vad blir 'result' då 'n' är 97?      Svar: 
+
+3. Vad blir 'result' då 'n' är 6171?    Svar: 
+
+4. Om man startar från 27, efter hur många steg dyker 9232 upp?         Svar:
+
+5. Om man startar från 97, vad är talet efter 100 steg?                 Svar:
+
+6. Om man startar från 27, vilket är det 10:e jämna talet i sekvensen?  Svar:
+
+7. Om man startar från 703, vilka är det största talet i sekvensen?     Svar:
+
+Tips: breakpoint fil:rad
+      condition $a > b           $a är en "convenience variable" som bara finns i GDB
+      commands
+          set $a = x
+          continue
+      end
